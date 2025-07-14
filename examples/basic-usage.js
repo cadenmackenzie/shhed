@@ -12,16 +12,16 @@ const { Shhed } = require('shhed');
 async function main() {
   // Initialize Shhed SDK with full access (public and private keys)
   const kv = new Shhed({
-    access_key: process.env.KV_ACCESS_KEY,
-    secret_key: process.env.KV_SECRET_KEY,
-    projectId: process.env.KV_PROJECT_ID
+    access_key: process.env.SHHED_ACCESS_KEY,
+    secret_key: process.env.SHHED_SECRET_KEY,
+    projectId: process.env.SHHED_PROJECT_ID
     // endpoint: 'http://localhost:8000' // Optional: only for development/testing
   });
 
   // Initialize Shhed SDK with public access only (public keys only)
   const kvPublic = new Shhed({
-    access_key: process.env.KV_ACCESS_KEY,
-    projectId: process.env.KV_PROJECT_ID
+    access_key: process.env.SHHED_ACCESS_KEY,
+    projectId: process.env.SHHED_PROJECT_ID
     // endpoint: 'http://localhost:8000' // Optional: only for development/testing
   });
 

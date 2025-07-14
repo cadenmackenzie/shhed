@@ -116,18 +116,18 @@ class ConfigService {
 // Example usage
 async function main(): Promise<void> {
   const config: ShhedConfig = {
-    access_key: process.env.KV_ACCESS_KEY!,
-    secret_key: process.env.KV_SECRET_KEY!,
-    projectId: process.env.KV_PROJECT_ID!
+    access_key: process.env.SHHED_ACCESS_KEY!,
+    secret_key: process.env.SHHED_SECRET_KEY!,
+    projectId: process.env.SHHED_PROJECT_ID!
     // endpoint: 'http://localhost:8000' // Optional: only for development/testing
   };
 
   // Validate required environment variables
   if (!config.access_key || !config.projectId) {
     console.error('❌ Missing required environment variables:');
-    console.error('   KV_ACCESS_KEY: Your Shhed access key');
-    console.error('   KV_SECRET_KEY: Your Shhed secret key (optional for public keys only)');
-    console.error('   KV_PROJECT_ID: Your project ID');
+    console.error('   SHHED_ACCESS_KEY: Your Shhed access key');
+    console.error('   SHHED_SECRET_KEY: Your Shhed secret key (optional for public keys only)');
+    console.error('   SHHED_PROJECT_ID: Your project ID');
     process.exit(1);
   }
 

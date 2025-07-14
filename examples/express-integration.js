@@ -24,8 +24,8 @@ class AppConfig {
     try {
       // Initialize Shhed SDK
       this.shhed = new Shhed({
-        token: process.env.KV_TOKEN,
-        projectId: process.env.KV_PROJECT_ID
+        token: process.env.SHHED_TOKEN,
+        projectId: process.env.SHHED_PROJECT_ID
         // endpoint: 'http://localhost:8000' // Optional: only for development/testing
       });
 
@@ -158,10 +158,10 @@ async function startServer() {
 
   try {
     // Validate required environment variables
-    if (!process.env.KV_TOKEN || !process.env.KV_PROJECT_ID) {
+    if (!process.env.SHHED_TOKEN || !process.env.SHHED_PROJECT_ID) {
       console.error('❌ Missing required environment variables:');
-      console.error('   KV_TOKEN: Your Shhed access token');
-      console.error('   KV_PROJECT_ID: Your project ID');
+      console.error('   SHHED_TOKEN: Your Shhed access token');
+      console.error('   SHHED_PROJECT_ID: Your project ID');
       process.exit(1);
     }
 

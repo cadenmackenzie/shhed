@@ -43,15 +43,15 @@ const { Shhed } = require('shhed');
 
 // Full access (can retrieve both public and private keys)
 const kv = new Shhed({
-  access_key: process.env.KV_ACCESS_KEY,
-  secret_key: process.env.KV_SECRET_KEY,
-  projectId: process.env.KV_PROJECT_ID
+  access_key: process.env.SHHED_ACCESS_KEY,
+  secret_key: process.env.SHHED_SECRET_KEY,
+  projectId: process.env.SHHED_PROJECT_ID
 });
 
 // Public access only (can only retrieve public keys)
 const kvPublic = new Shhed({
-  access_key: process.env.KV_ACCESS_KEY,
-  projectId: process.env.KV_PROJECT_ID
+  access_key: process.env.SHHED_ACCESS_KEY,
+  projectId: process.env.SHHED_PROJECT_ID
 });
 
 // Get an API key
@@ -65,9 +65,9 @@ console.log('Stripe API Key:', stripeKey);
 import { Shhed, ShhedConfig } from 'shhed';
 
 const config: ShhedConfig = {
-  access_key: process.env.KV_ACCESS_KEY!,
-  secret_key: process.env.KV_SECRET_KEY!,
-  projectId: process.env.KV_PROJECT_ID!
+  access_key: process.env.SHHED_ACCESS_KEY!,
+  secret_key: process.env.SHHED_SECRET_KEY!,
+  projectId: process.env.SHHED_PROJECT_ID!
 };
 
 const kv = new Shhed(config);
@@ -204,10 +204,10 @@ const kv = new Shhed({
 For security, store your credentials in environment variables:
 
 ```bash
-export KV_ACCESS_KEY="ak_your_access_key"
-export KV_SECRET_KEY="your_secret_key"  # Optional: for full access
-export KV_PROJECT_ID="your_project_id"
-# export KV_ENDPOINT="http://localhost:8000"  # Optional: for development only
+export SHHED_ACCESS_KEY="ak_your_access_key"
+export SHHED_SECRET_KEY="your_secret_key"  # Optional: for full access
+export SHHED_PROJECT_ID="your_project_id"
+# export SHHED_ENDPOINT="http://localhost:8000"  # Optional: for development only
 ```
 
 ## 📁 Project ID Format
@@ -304,8 +304,8 @@ const { Shhed } = require('shhed');
 
 const app = express();
 const kv = new Shhed({
-  token: process.env.KV_TOKEN,
-  projectId: process.env.KV_PROJECT_ID
+  token: process.env.SHHED_TOKEN,
+  projectId: process.env.SHHED_PROJECT_ID
 });
 
 app.get('/api/config', async (req, res) => {
@@ -326,8 +326,8 @@ app.get('/api/config', async (req, res) => {
 import { Shhed } from 'shhed';
 
 export const kv = new Shhed({
-  token: process.env.KV_TOKEN,
-  projectId: process.env.KV_PROJECT_ID
+  token: process.env.SHHED_TOKEN,
+  projectId: process.env.SHHED_PROJECT_ID
 });
 
 // pages/api/payment.js

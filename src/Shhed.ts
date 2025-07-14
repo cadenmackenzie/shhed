@@ -8,15 +8,15 @@ import { ShhedConfig, ShhedResponse, ShhedError, ShhedSDKError } from './types';
  * ```typescript
  * // Full access (public and private keys)
  * const kv = new Shhed({
- *   access_key: process.env.KV_ACCESS_KEY,
- *   secret_key: process.env.KV_SECRET_KEY,
- *   projectId: process.env.KV_PROJECT
+ *   access_key: process.env.SHHED_ACCESS_KEY,
+ *   secret_key: process.env.SHHED_SECRET_KEY,
+ *   projectId: process.env.SHHED_PROJECT
  * });
  * 
  * // Public access only
  * const kvPublic = new Shhed({
- *   access_key: process.env.KV_ACCESS_KEY,
- *   projectId: process.env.KV_PROJECT
+ *   access_key: process.env.SHHED_ACCESS_KEY,
+ *   projectId: process.env.SHHED_PROJECT
  * });
  * 
  * const stripeKey = await kv.get('STRIPE_API_KEY');
